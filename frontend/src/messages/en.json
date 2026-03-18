@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "activities": "Activities",
+    "research": "Research",
+    "exams": "Certification",
+    "students": "Students",
+    "admission": "Admission",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Japanese Studies Faculty",
+      "subtitle": "Bridging Vietnamese-Japanese cultures, nurturing talent for the future",
+      "cta_primary": "Explore Programs",
+      "cta_secondary": "Apply 2026"
+    },
+    "intro": {
+      "title": "About Our Faculty",
+      "content": "The Japanese Studies Faculty was established to train high-quality human resources with deep understanding of Japanese language, culture and society.",
+      "stats": {
+        "students": "Students",
+        "teachers": "Lecturers",
+        "partners": "Japanese Partners",
+        "years": "Years Established"
+      }
+    },
+    "featured_news": "Featured News",
+    "programs": "Training Programs",
+    "view_all": "View All",
+    "admission_cta": {
+      "title": "Become a Japanese Studies Student",
+      "subtitle": "Open vast career opportunities with Japanese language",
+      "button": "Apply Now"
+    }
+  },
+  "about": {
+    "title": "About",
+    "dean_message": "Dean's Message",
+    "vision": "Vision & Mission",
+    "structure": "Organizational Structure",
+    "faculty": "Faculty Members",
+    "facilities": "Facilities",
+    "partners": "Japanese Partners"
+  },
+  "education": {
+    "title": "Education",
+    "formal": "Formal Programs",
+    "non_formal": "Non-Formal Programs",
+    "postgraduate": "Postgraduate Programs"
+  },
+  "activities": {
+    "title": "Activities",
+    "news": "News & Events",
+    "conference": "International Conferences",
+    "internship": "Japan Internships",
+    "partners": "Business Partners",
+    "projects": "Collaboration Projects"
+  },
+  "research": {
+    "title": "Research",
+    "faculty": "Faculty Research",
+    "student": "Student Research"
+  },
+  "exams": {
+    "title": "Japanese Certification",
+    "jtest": "J-Test",
+    "nattest": "NAT-Test",
+    "jlpt": "JLPT",
+    "mini": "Mini Test",
+    "materials": "Study Materials",
+    "take_test": "Take Test",
+    "time_left": "Time Left",
+    "submit": "Submit",
+    "score": "Score",
+    "passed": "Passed",
+    "failed": "Failed",
+    "your_score": "Your Score",
+    "correct": "Correct",
+    "review": "Review"
+  },
+  "students": {
+    "title": "Student Activities",
+    "clubs": "Clubs",
+    "competitions": "Competitions",
+    "outstanding": "Outstanding Students",
+    "alumni": "Successful Alumni",
+    "journey": "Learning Journey",
+    "abroad": "Study in Japan"
+  },
+  "admission": {
+    "title": "Admission",
+    "info": "Admission Information",
+    "methods": "Application Methods",
+    "tuition": "Tuition Fees",
+    "scholarships": "Scholarships",
+    "guide": "Registration Guide",
+    "consult": "Consultation",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Submit",
+      "success": "Application submitted! We will contact you soon.",
+      "program": "Program of Interest"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Working Hours",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!"
+    },
+    "visit": "Campus Visit Registration"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "no_data": "No data available",
+    "read_more": "Read More",
+    "back": "Back",
+    "search": "Search",
+    "page": "Page",
+    "of": "of",
+    "comments": "Comments",
+    "leave_comment": "Leave a Comment",
+    "your_name": "Your name",
+    "your_email": "Your email",
+    "your_comment": "Your comment...",
+    "post_comment": "Post Comment",
+    "comment_pending": "Comment pending approval",
+    "published": "Published"
+  }
+}

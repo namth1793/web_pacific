@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "education": "Đào Tạo",
+    "activities": "Hoạt Động",
+    "research": "Nghiên Cứu",
+    "exams": "Chứng Chỉ",
+    "students": "Sinh Viên",
+    "admission": "Tuyển Sinh",
+    "contact": "Liên Hệ",
+    "admin": "Quản Trị"
+  },
+  "home": {
+    "hero": {
+      "title": "Khoa Nhật Bản Học",
+      "subtitle": "Nơi kết nối văn hóa Việt - Nhật, đào tạo nhân tài hướng đến tương lai",
+      "cta_primary": "Khám Phá Chương Trình",
+      "cta_secondary": "Tuyển Sinh 2026"
+    },
+    "intro": {
+      "title": "Về Khoa Nhật Bản Học",
+      "content": "Khoa Nhật Bản Học được thành lập với sứ mệnh đào tạo nguồn nhân lực chất lượng cao, am hiểu sâu sắc về ngôn ngữ, văn hóa và xã hội Nhật Bản.",
+      "stats": {
+        "students": "Sinh Viên",
+        "teachers": "Giảng Viên",
+        "partners": "Đối Tác Nhật",
+        "years": "Năm Thành Lập"
+      }
+    },
+    "featured_news": "Tin Tức Nổi Bật",
+    "programs": "Chương Trình Đào Tạo",
+    "view_all": "Xem Tất Cả",
+    "admission_cta": {
+      "title": "Trở Thành Sinh Viên Khoa Nhật Bản Học",
+      "subtitle": "Mở ra cơ hội nghề nghiệp rộng lớn với tiếng Nhật",
+      "button": "Đăng Ký Ngay"
+    }
+  },
+  "about": {
+    "title": "Giới Thiệu",
+    "dean_message": "Thông Điệp Trưởng Khoa",
+    "vision": "Tầm Nhìn & Sứ Mệnh",
+    "structure": "Cơ Cấu Tổ Chức",
+    "faculty": "Đội Ngũ Giảng Viên",
+    "facilities": "Cơ Sở Vật Chất",
+    "partners": "Đối Tác Nhật Bản"
+  },
+  "education": {
+    "title": "Đào Tạo",
+    "formal": "Chương Trình Chính Quy",
+    "non_formal": "Chương Trình Không Chính Quy",
+    "postgraduate": "Chương Trình Sau Đại Học"
+  },
+  "activities": {
+    "title": "Hoạt Động",
+    "news": "Tin Tức & Sự Kiện",
+    "conference": "Hội Thảo Quốc Tế",
+    "internship": "Thực Tập Nhật Bản",
+    "partners": "Đối Tác Doanh Nghiệp",
+    "projects": "Dự Án Hợp Tác"
+  },
+  "research": {
+    "title": "Nghiên Cứu Khoa Học",
+    "faculty": "Nghiên Cứu Của Giảng Viên",
+    "student": "Nghiên Cứu Của Sinh Viên"
+  },
+  "exams": {
+    "title": "Chứng Chỉ Tiếng Nhật",
+    "jtest": "J-Test",
+    "nattest": "NAT-Test",
+    "jlpt": "JLPT",
+    "mini": "Mini Test",
+    "materials": "Tài Liệu Học Tập",
+    "take_test": "Làm Bài Thi",
+    "time_left": "Thời Gian Còn Lại",
+    "submit": "Nộp Bài",
+    "score": "Điểm Số",
+    "passed": "Đậu",
+    "failed": "Chưa Đậu",
+    "your_score": "Điểm của bạn",
+    "correct": "Câu đúng",
+    "review": "Xem Lại"
+  },
+  "students": {
+    "title": "Hoạt Động Sinh Viên",
+    "clubs": "Câu Lạc Bộ",
+    "competitions": "Cuộc Thi",
+    "outstanding": "Sinh Viên Xuất Sắc",
+    "alumni": "Cựu Sinh Viên Thành Đạt",
+    "journey": "Hành Trình Học Tập",
+    "abroad": "Du Học Nhật Bản"
+  },
+  "admission": {
+    "title": "Tuyển Sinh",
+    "info": "Thông Tin Tuyển Sinh",
+    "methods": "Phương Thức Xét Tuyển",
+    "tuition": "Học Phí",
+    "scholarships": "Học Bổng",
+    "guide": "Hướng Dẫn Đăng Ký",
+    "consult": "Tư Vấn Tuyển Sinh",
+    "form": {
+      "name": "Họ và Tên",
+      "email": "Email",
+      "phone": "Số Điện Thoại",
+      "message": "Nội Dung",
+      "submit": "Gửi Đăng Ký",
+      "success": "Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.",
+      "program": "Chương Trình Quan Tâm"
+    }
+  },
+  "contact": {
+    "title": "Liên Hệ",
+    "address": "Địa Chỉ",
+    "phone": "Điện Thoại",
+    "email": "Email",
+    "hours": "Giờ Làm Việc",
+    "form": {
+      "name": "Họ và Tên",
+      "email": "Email",
+      "phone": "Số Điện Thoại",
+      "subject": "Tiêu Đề",
+      "message": "Nội Dung",
+      "submit": "Gửi Tin Nhắn",
+      "success": "Tin nhắn đã được gửi thành công!"
+    },
+    "visit": "Đăng Ký Tham Quan"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Có lỗi xảy ra",
+    "no_data": "Không có dữ liệu",
+    "read_more": "Đọc Thêm",
+    "back": "Quay Lại",
+    "search": "Tìm Kiếm",
+    "page": "Trang",
+    "of": "của",
+    "comments": "Bình Luận",
+    "leave_comment": "Để Lại Bình Luận",
+    "your_name": "Tên của bạn",
+    "your_email": "Email của bạn",
+    "your_comment": "Bình luận...",
+    "post_comment": "Đăng Bình Luận",
+    "comment_pending": "Bình luận đang chờ duyệt",
+    "published": "Ngày đăng"
+  }
+}

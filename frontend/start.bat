@@ -1,0 +1,3 @@
+@echo off
+echo Starting Web Pacific Frontend (port 3001)...
+npm run dev
