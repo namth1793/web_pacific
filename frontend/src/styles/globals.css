@@ -2,33 +2,222 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Google Fonts: Noto Serif JP for headings ── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
 @layer base {
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { color: #1a1a1a; background: #fff; }
+  body {
+    color: #1a1a1a;
+    background: #fff;
+    font-family: 'Noto Sans JP', Inter, sans-serif;
+  }
+
+  /* Custom scrollbar — red Japanese accent */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f5f5f0; }
+  ::-webkit-scrollbar-thumb { background: #BC002D; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #8a0020; }
+
+  h1, h2, h3 {
+    font-family: 'Noto Serif JP', serif;
+  }
 }
 
 @layer components {
+  /* ── Buttons ── */
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-colors duration-200;
+    @apply bg-primary text-white px-6 py-3 rounded font-medium;
+    @apply transition-all duration-200;
+    @apply hover:bg-primary-dark hover:shadow-lg hover:-translate-y-0.5;
+    box-shadow: 0 0 0 0 rgba(188,0,45,0.3);
+    @apply relative overflow-hidden;
   }
+  .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(188,0,45,0.30);
+  }
+  .btn-primary::after {
+    content: '';
+    @apply absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-200;
+  }
+  .btn-primary:hover::after {
+    @apply opacity-100;
+  }
+
   .btn-outline {
-    @apply border border-primary text-primary px-6 py-3 rounded font-medium hover:bg-primary hover:text-white transition-all duration-200;
+    @apply border-2 border-primary text-primary px-6 py-3 rounded font-medium;
+    @apply transition-all duration-200;
+    @apply hover:bg-primary hover:text-white hover:-translate-y-0.5;
   }
+
+  /* ── Section titles ── */
   .section-title {
     @apply text-3xl font-bold text-japanese-dark mb-2;
+    font-family: 'Noto Serif JP', serif;
   }
   .section-subtitle {
-    @apply text-japanese-muted text-lg mb-8;
+    @apply text-japanese-muted text-base mb-8;
   }
+
+  /* ── Cards ── */
   .card {
-    @apply bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-200;
+    @apply bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden;
+    transition: box-shadow 300ms ease, transform 300ms ease;
   }
+  .card:hover {
+    @apply shadow-xl;
+    transform: translateY(-4px);
+  }
+
+  /* ── Japanese divider: left red border bar ── */
   .japanese-divider {
     @apply flex items-center gap-3 mb-6;
   }
   .japanese-divider::before {
     content: '';
-    @apply block h-6 w-1 bg-primary rounded;
+    @apply block h-7 w-1 bg-primary rounded-full flex-shrink-0;
   }
+
+  /* ── Japan badge ── */
+  .jp-badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full;
+    @apply bg-primary/10 text-primary border border-primary/20;
+  }
+
+  /* ── Card accent: 4px left gradient red bar ── */
+  .jp-card-accent {
+    position: relative;
+    overflow: hidden;
+  }
+  .jp-card-accent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #BC002D 0%, #ff4d6d 100%);
+  }
+
+  /* ── Ink stroke underline ── */
+  .ink-underline {
+    @apply relative inline-block;
+  }
+  .ink-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+  }
+  .ink-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ── Mon (family crest) decoration ── */
+  .jp-mon {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary/30 text-primary/30 text-2xl;
+    font-family: 'Noto Serif JP', serif;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Sakura petal fall animation
+───────────────────────────────────────────── */
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-10vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(60px) rotate(180deg);
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-30px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  pointer-events: none;
+  animation: sakura-fall linear infinite;
+}
+
+/* ─────────────────────────────────────────────
+   Float animation (gentle bob + slight rotation)
+───────────────────────────────────────────── */
+@keyframes float-anim {
+  0%   { transform: translateY(0px) rotate(-2deg); }
+  50%  { transform: translateY(-12px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(-2deg); }
+}
+.float-anim {
+  animation: float-anim 4s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
+   Wave / Seigaiha background (subtle red/5)
+───────────────────────────────────────────── */
+.wave-divider {
+  width: 100%;
+  height: 60px;
+  background:
+    radial-gradient(circle at 50% 100%, transparent 61%, rgba(188,0,45,0.05) 61%, rgba(188,0,45,0.05) 66%, transparent 66%) 0 0 / 40px 40px,
+    radial-gradient(circle at 50% 100%, transparent 61%, rgba(188,0,45,0.05) 61%, rgba(188,0,45,0.05) 66%, transparent 66%) 20px 20px / 40px 40px;
+}
+
+/* ─────────────────────────────────────────────
+   Diagonal SVG line pattern background
+   #BC002D at 0.12 opacity
+───────────────────────────────────────────── */
+.jp-pattern-bg {
+  background-color: #FAFAF8;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23BC002D' stroke-width='0.5' opacity='0.12'%3E%3Cline x1='0' y1='0' x2='40' y2='40'/%3E%3Cline x1='40' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ─────────────────────────────────────────────
+   Rising sun radial gradient (primary/10 bottom)
+───────────────────────────────────────────── */
+.rising-sun-bg {
+  background: radial-gradient(ellipse at center bottom, rgba(188,0,45,0.10) 0%, transparent 70%);
+}
+
+/* ─────────────────────────────────────────────
+   Shimmer text
+───────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #BC002D 25%, #ff4d6d 50%, #BC002D 75%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─────────────────────────────────────────────
+   Traditional JP double-border card
+───────────────────────────────────────────── */
+.jp-border {
+  border: 1px solid #e5e5e0;
+  position: relative;
+}
+.jp-border::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(188,0,45,0.10);
+  pointer-events: none;
 }
