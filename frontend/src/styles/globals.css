@@ -1,9 +1,9 @@
+/* ── Google Fonts: must be first ── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ── Google Fonts: Noto Serif JP for headings ── */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
 @layer base {
   * { box-sizing: border-box; }

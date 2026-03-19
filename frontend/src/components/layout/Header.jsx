@@ -43,47 +43,59 @@ export default function Header() {
     return pathname === full || (href !== '/' && pathname.startsWith(full));
   };
 
+  const LOCALE_LABELS = { vi: 'VI', en: 'EN', jp: '日' };
+
   return (
-    <header className={`sticky top-0 z-50 bg-white transition-shadow duration-200 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
-      <div className="h-1 bg-primary w-full" />
+    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 ${scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.08)]' : ''}`}>
+      {/* Japanese red stripe — top */}
+      <div className="h-0.5 bg-gradient-to-r from-primary via-primary-light to-primary w-full" />
+
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-        <Link href={localePath('/')} className="flex items-center gap-3 flex-shrink-0">
-          <div className="w-10 h-10 bg-primary rounded flex items-center justify-center text-white font-bold text-xl" style={{ fontFamily: 'Noto Sans JP' }}>
-            日
+        {/* Logo */}
+        <Link href={localePath('/')} className="flex items-center gap-3 flex-shrink-0 group">
+          <div className="relative w-10 h-10 flex-shrink-0">
+            {/* Rising sun logo */}
+            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:shadow-primary/30 group-hover:shadow-md transition-shadow"
+              style={{ fontFamily: 'Noto Serif JP' }}>
+              日
+            </div>
           </div>
-          <div>
-            <div className="font-bold text-sm text-japanese-dark leading-tight" style={{ fontFamily: 'Noto Sans JP' }}>日本語学部</div>
-            <div className="text-xs text-japanese-muted leading-tight">Khoa Nhật Bản Học</div>
+          <div className="hidden sm:block">
+            <div className="font-bold text-sm text-japanese-dark leading-tight tracking-wide"
+              style={{ fontFamily: 'Noto Serif JP' }}>日本語学部</div>
+            <div className="text-[10px] text-japanese-muted leading-tight tracking-widest uppercase">Japanese Studies</div>
           </div>
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-0.5">
+        {/* Nav */}
+        <nav className="hidden xl:flex items-center">
           {navLinks.map(link => (
-            <Link
-              key={link.key}
-              href={localePath(link.href)}
-              className={`px-3 py-2 text-sm rounded font-medium transition-colors whitespace-nowrap ${
-                isActive(link.href)
-                  ? 'text-primary bg-red-50'
-                  : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+            <Link key={link.key} href={localePath(link.href)}
+              className={`relative px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap group ${
+                isActive(link.href) ? 'text-primary' : 'text-gray-600 hover:text-primary'
               }`}
             >
               {t(link.key)}
+              <span className={`absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full transition-transform duration-200 origin-left ${
+                isActive(link.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+              }`} />
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3 flex-shrink-0">
-          <div className="flex items-center border border-gray-200 rounded overflow-hidden text-xs">
-            {['vi', 'en', 'jp'].map((loc, i) => (
-              <button
-                key={loc}
-                onClick={() => switchLocale(loc)}
-                className={`px-2.5 py-1.5 font-medium transition-colors ${
-                  locale === loc ? 'bg-primary text-white' : 'text-gray-600 hover:bg-gray-50'
-                } ${i > 0 ? 'border-l border-gray-200' : ''}`}
+          {/* Language switcher — Japanese flag style */}
+          <div className="flex items-center gap-1">
+            {['vi', 'en', 'jp'].map((loc) => (
+              <button key={loc} onClick={() => switchLocale(loc)}
+                className={`w-8 h-8 rounded-full text-xs font-bold transition-all duration-200 ${
+                  locale === loc
+                    ? 'bg-primary text-white shadow-sm shadow-primary/30'
+                    : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'
+                }`}
+                style={loc === 'jp' ? { fontFamily: 'Noto Serif JP' } : {}}
               >
-                {loc.toUpperCase()}
+                {LOCALE_LABELS[loc]}
               </button>
             ))}
           </div>

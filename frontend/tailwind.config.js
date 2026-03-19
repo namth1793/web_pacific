@@ -18,16 +18,24 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
-        jp: ['Noto Sans JP', 'sans-serif']
+        sans: ['Noto Sans JP', 'Inter', 'sans-serif'],
+        serif: ['Noto Serif JP', 'serif'],
+        jp: ['Noto Sans JP', 'sans-serif'],
+        'jp-serif': ['Noto Serif JP', 'serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-in-out',
-        'slide-up': 'slideUp 0.6s ease-out'
+        'fade-in':    'fadeIn 0.6s ease-in-out',
+        'slide-up':   'slideUp 0.6s ease-out',
+        'sakura':     'sakuraFall 8s linear infinite',
+        'float':      'float 4s ease-in-out infinite',
+        'shimmer':    'shimmer 2.5s linear infinite',
       },
       keyframes: {
-        fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
-        slideUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } }
+        fadeIn:     { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+        slideUp:    { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+        sakuraFall: { '0%': { transform: 'translateY(-5vh) rotate(0deg)', opacity: 1 }, '100%': { transform: 'translateY(105vh) rotate(540deg)', opacity: 0 } },
+        float:      { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+        shimmer:    { '0%': { backgroundPosition: '-200% center' }, '100%': { backgroundPosition: '200% center' } },
       }
     }
   },
