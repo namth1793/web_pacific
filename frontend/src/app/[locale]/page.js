@@ -94,7 +94,7 @@ const STATS = [
 
 const NEWS_FALLBACK_IMGS = [
   'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80',
-  'https://images.unsplash.com/photo-1557400006-4d6f6fd30066?w=600&q=80',
+  'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=600&q=80',
   'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80',
 ];
 const NEWS_FALLBACK_KANJI = ['新', '話', '誌'];
@@ -474,7 +474,7 @@ export default function HomePage() {
               {/* Smaller images */}
               {[
                 { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80', alt: 'Mount Fuji' },
-                { src: 'https://images.unsplash.com/photo-1557400006-4d6f6fd30066?w=600&q=80', alt: 'Temple' },
+                { src: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=600&q=80', alt: 'Temple' },
                 { src: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=600&q=80', alt: 'Tokyo' },
               ].map((img, i) => (
                 <motion.div
