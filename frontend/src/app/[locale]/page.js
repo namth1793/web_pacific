@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { articleAPI, programAPI } from '@/lib/api';
-import { formatDate, getTranslation, getImageUrl, truncate } from '@/lib/utils';
+import { formatDate, getTranslation, getImageUrl, truncate, toArray } from '@/lib/utils';
 
 /* ─────────────────────────────────────────────
    Fallback data
@@ -234,23 +234,23 @@ export default function HomePage() {
 
   useEffect(() => {
     articleAPI.getAll({ limit: 3, featured: true })
-      .then(res => setArticles(Array.isArray(res.data) ? res.data : (res.data?.data || [])))
+      .then(res => setArticles(toArray(res.data)))
       .catch(() => setArticles(ARTICLES_FB))
       .finally(() => setLoadingArticles(false));
 
     programAPI.getAll({ limit: 3 })
-      .then(res => setPrograms(Array.isArray(res.data) ? res.data : (res.data?.data || [])))
+      .then(res => setPrograms(toArray(res.data)))
       .catch(() => setPrograms(PROGRAMS_FB))
       .finally(() => setLoadingPrograms(false));
   }, []);
 
-  const displayPrograms = (programs.length > 0 ? programs : PROGRAMS_FB).slice(0, 3).map((p, i) => ({
+  const displayPrograms = (Array.isArray(programs) && programs.length > 0 ? programs : PROGRAMS_FB).slice(0, 3).map((p, i) => ({
     ...p,
     kanji: p.kanji || PROGRAMS_FB[i]?.kanji || '語',
     gradient: p.gradient || PROGRAMS_FB[i]?.gradient || 'from-red-900 to-red-700',
   }));
 
-  const displayArticles = (articles.length > 0 ? articles : ARTICLES_FB).slice(0, 3);
+  const displayArticles = (Array.isArray(articles) && articles.length > 0 ? articles : ARTICLES_FB).slice(0, 3);
 
   return (
     <div className="overflow-x-hidden">
