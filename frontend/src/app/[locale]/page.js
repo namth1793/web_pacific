@@ -234,12 +234,12 @@ export default function HomePage() {
 
   useEffect(() => {
     articleAPI.getAll({ limit: 3, featured: true })
-      .then(res => setArticles(res.data?.articles || res.data || []))
+      .then(res => setArticles(Array.isArray(res.data) ? res.data : (res.data?.data || [])))
       .catch(() => setArticles(ARTICLES_FB))
       .finally(() => setLoadingArticles(false));
 
     programAPI.getAll({ limit: 3 })
-      .then(res => setPrograms(res.data?.programs || res.data || []))
+      .then(res => setPrograms(Array.isArray(res.data) ? res.data : (res.data?.data || [])))
       .catch(() => setPrograms(PROGRAMS_FB))
       .finally(() => setLoadingPrograms(false));
   }, []);
