@@ -67,7 +67,7 @@ export default function ResearchPage() {
 
   useEffect(() => {
     researchAPI.getAll()
-      .then(res => setResearchItems(res.data?.research || res.data || []))
+      .then(res => setResearchItems(Array.isArray(res.data) ? res.data : (Array.isArray(res.data?.data) ? res.data.data : [])))
       .catch(() => setResearchItems([...FACULTY_RESEARCH, ...STUDENT_RESEARCH]))
       .finally(() => setLoading(false));
   }, []);

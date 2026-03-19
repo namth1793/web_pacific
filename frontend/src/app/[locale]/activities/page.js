@@ -40,7 +40,7 @@ export default function ActivitiesPage() {
 
   useEffect(() => {
     articleAPI.getAll()
-      .then(res => setArticles(res.data?.articles || res.data || []))
+      .then(res => setArticles(Array.isArray(res.data) ? res.data : (Array.isArray(res.data?.data) ? res.data.data : [])))
       .catch(() => setArticles(ARTICLES_FALLBACK))
       .finally(() => setLoading(false));
   }, []);

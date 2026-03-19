@@ -77,7 +77,7 @@ export default function ExamsPage() {
 
   useEffect(() => {
     testAPI.getAll()
-      .then(res => setTests(res.data?.tests || res.data || []))
+      .then(res => setTests(Array.isArray(res.data) ? res.data : (Array.isArray(res.data?.data) ? res.data.data : [])))
       .catch(() => setTests(TESTS_FALLBACK))
       .finally(() => setLoading(false));
   }, []);

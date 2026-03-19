@@ -74,7 +74,7 @@ export default function EducationPage() {
 
   useEffect(() => {
     programAPI.getAll()
-      .then(res => setPrograms(res.data?.programs || res.data || []))
+      .then(res => setPrograms(Array.isArray(res.data) ? res.data : (Array.isArray(res.data?.data) ? res.data.data : [])))
       .catch(() => setPrograms(PROGRAMS_FALLBACK))
       .finally(() => setLoading(false));
   }, []);
