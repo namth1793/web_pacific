@@ -854,7 +854,7 @@ export default function HomePage() {
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         {/* Background */}
         <Image
-          src="https://images.unsplash.com/photo-1540378516427-5b5ae44d4a07?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=1600&q=80"
           alt="Tokyo night"
           fill
           className="object-cover"
