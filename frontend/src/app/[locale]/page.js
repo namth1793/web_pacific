@@ -282,9 +282,6 @@ export default function HomePage() {
           <FallingSakura />
         </div>
 
-
-
-        </div>
         {/* Hero content */}
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full"
