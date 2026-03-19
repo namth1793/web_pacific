@@ -1,5 +1,21 @@
 require('dotenv').config();
-require('./src/db'); // init SQLite — creates tables if not exist
+const db = require('./src/db'); // init SQLite — creates tables if not exist
+
+// Auto-seed on first run (when DB is empty)
+function autoSeed() {
+  try {
+    const count = db.prepare('SELECT COUNT(*) as n FROM users').get();
+    if (count.n === 0) {
+      console.log('🌱 Empty database detected — running auto-seed...');
+      require('./seed/auto');
+      console.log('✅ Auto-seed complete.');
+    }
+  } catch (e) {
+    console.error('Auto-seed error:', e.message);
+  }
+}
+autoSeed();
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
