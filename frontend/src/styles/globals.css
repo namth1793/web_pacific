@@ -180,8 +180,8 @@
    #BC002D at 0.12 opacity
 ───────────────────────────────────────────── */
 .jp-pattern-bg {
-  background-color: #FAFAF8;
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23BC002D' stroke-width='0.5' opacity='0.12'%3E%3Cline x1='0' y1='0' x2='40' y2='40'/%3E%3Cline x1='40' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #FFF0F5;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e8a0b4' stroke-width='0.6' opacity='0.4'%3E%3Cline x1='0' y1='0' x2='40' y2='40'/%3E%3Cline x1='40' y1='0' x2='0' y2='40'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ─────────────────────────────────────────────

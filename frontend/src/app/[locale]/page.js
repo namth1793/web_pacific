@@ -94,7 +94,7 @@ const STATS = [
 
 const NEWS_FALLBACK_IMGS = [
   'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80',
-  'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=600&q=80',
+  'https://images.unsplash.com/photo-1557400006-4d6f6fd30066?w=600&q=80',
   'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80',
 ];
 const NEWS_FALLBACK_KANJI = ['新', '話', '誌'];
@@ -282,11 +282,9 @@ export default function HomePage() {
           <FallingSakura />
         </div>
 
-        {/* Rising sun decoration top-right */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] z-[2] pointer-events-none">
-          <RisingSun className="w-full h-full" opacity={0.05} />
-        </div>
 
+
+        </div>
         {/* Hero content */}
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full"
@@ -377,6 +375,10 @@ export default function HomePage() {
           2. STATS
       ══════════════════════════════════════════ */}
       <section className="bg-primary relative overflow-hidden">
+        {/* Rising Sun watermark on red background */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none opacity-60">
+          <RisingSun className="w-full h-full" opacity={0.1} />
+        </div>
         {/* Subtle diagonal white line overlay */}
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
@@ -417,7 +419,6 @@ export default function HomePage() {
         <div className="absolute right-0 top-0 w-[600px] h-[600px] pointer-events-none">
           <RisingSun className="w-full h-full" opacity={0.03} />
         </div>
-
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             {/* Left text */}
@@ -475,9 +476,9 @@ export default function HomePage() {
 
               {/* Smaller images */}
               {[
-                { src: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=600&q=80', alt: 'Mount Fuji' },
-                { src: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=600&q=80', alt: 'Temple' },
-                { src: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80', alt: 'Tokyo' },
+                { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80', alt: 'Mount Fuji' },
+                { src: 'https://images.unsplash.com/photo-1557400006-4d6f6fd30066?w=600&q=80', alt: 'Temple' },
+                { src: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=600&q=80', alt: 'Tokyo' },
               ].map((img, i) => (
                 <motion.div
                   key={i}
@@ -498,7 +499,7 @@ export default function HomePage() {
           4. KEY FIGURES
       ══════════════════════════════════════════ */}
       <section className="jp-pattern-bg relative">
-        <WaveDivider flip={false} color="#FAFAF8" />
+        <WaveDivider flip={false} color="#FFF0F5" />
         <div className="py-14 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
@@ -528,7 +529,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <WaveDivider flip={true} color="#FAFAF8" />
+        <WaveDivider flip={true} color="#FFF0F5" />
       </section>
 
       {/* ══════════════════════════════════════════
@@ -631,7 +632,7 @@ export default function HomePage() {
       ══════════════════════════════════════════ */}
       <section className="relative h-72 md:h-96 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=1600&q=80"
           alt="Mount Fuji"
           fill
           className="object-cover"
@@ -856,13 +857,17 @@ export default function HomePage() {
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         {/* Background */}
         <Image
-          src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1540378516427-5b5ae44d4a07?w=1600&q=80"
           alt="Tokyo night"
           fill
           className="object-cover"
         />
         {/* Primary color overlay */}
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
+        {/* Rising Sun on CTA red section */}
+        <div className="absolute left-8 top-1/2 -translate-y-1/2 w-72 h-72 pointer-events-none">
+          <RisingSun className="w-full h-full" opacity={0.1} />
+        </div>
         {/* Grid pattern overlay */}
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
@@ -880,7 +885,6 @@ export default function HomePage() {
             入学
           </span>
         </div>
-
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <motion.div
